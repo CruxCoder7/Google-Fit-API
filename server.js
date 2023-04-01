@@ -39,8 +39,8 @@ app.get("/steps", async (req, res) => {
     const queryURL = new urlParse(req.url);
     const code = queryParse.parse(queryURL.query).code;
     const ouath2client = new google.auth.OAuth2(
-        "586194342035-9hg6btal5a96cacefgd744s8hm0ibn8u.apps.googleusercontent.com",
-        "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",
+        process.env.CLIENT_ID,
+        process.env.CLIENT_SECRET,
         "http://localhost:3000/steps"
     )
 
